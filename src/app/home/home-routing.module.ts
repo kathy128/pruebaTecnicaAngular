@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HomeComponent } from './home.component';
-import { PostCrudComponent } from './post-crud/post-crud.component';
+import { AuthGuardGuard } from '../auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -10,12 +9,12 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'dashboard',
+        path: 'dashboard', canActivate:[AuthGuardGuard],
         loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
         data: { roles: ['dashboard_access'], preload: true}
       },
       {
-        path: 'post-crud',
+        path: 'post-crud', canActivate:[AuthGuardGuard],
         loadChildren: () => import('./post-crud/post-crud.module').then((m) => m.PostCrudModule),
         data: { roles: ['post-crud_access'], preload: true}
       },

@@ -10,6 +10,7 @@ import { AddFormComponent } from './forms/add-form/add-form.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDialogModule,
   ]
 })
 export class PostCrudModule { }

@@ -93,17 +93,28 @@ export class LoginComponent implements OnInit {
           return;
         }
         this.loginInProgress = true;
-        this.toastService.info("Iniciando, espere un momento.");
         const user = this.form.value["user"];
         const password = this.form.value["password"];
         localStorage.setItem("RememberMe", this.rememberUser ? "true" : "false");
+        const userSaved = this.authService.getNames({firstName: true});
+        const passwordSaved = this.authService.getNames({lastName: true});
         // validate credentials
+        this.toastService.info("Iniciando, espere un momento.");
+        if(user === userSaved && password === passwordSaved){
+          this.isLoggedIn = true;
+          this.toastService.success(
+            "Bienvenido '" + this.authService.getNames({firstName: true, lastName: true}) + "'",
+            "Exito"
+          );
+          this.router.navigateByUrl("/home/dashboard");
+        }else{
+          this.toastService.error(
+            "Revise sus credenciales e intente de nuevo",
+            "Error"
+          );
+          this.loginInProgress = false;
+        }
         //
-        this.toastService.success(
-          "Bienvenido '" + this.authService.getNames({firstName: true, lastName: true}) + "'",
-          "Exito"
-        );
-        this.router.navigateByUrl("/home/dashboard");
       }
     } catch (e) {
       console.log(e);
@@ -113,6 +124,7 @@ export class LoginComponent implements OnInit {
       );
       this.loginInProgress = false;
     }
+    
   }
 
   /**

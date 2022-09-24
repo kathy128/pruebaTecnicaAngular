@@ -11,7 +11,8 @@
     "e2eNS": "ng e2e",
     "e2eNS-graphic": "ng e2e --configuration=graphic",
     "e2e-graphic": "ng e2e --configuration=withServeGraphic",
-    "checkLintErros": "tslint -project ."
+    "checkLintErros": "tslint -project .",
+    "serverAPI": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {

@@ -3,7 +3,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormGroup,FormBuilder, Validator, Validators } from '@angular/forms';
 import { ApiCrudService } from 'src/app/services/api-crud.service';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-add-form',
   templateUrl: './add-form.component.html',
@@ -37,7 +38,7 @@ addPost(){
       this.api.postPost(this.postForm.value).subscribe({
         next:(res)=>{alert("Producto añadido Correctamente");
         this.postForm.reset();
-        this.dialogRef.close();
+        this.dialogRef.close("Añadido");
       },
       error:()=>{
         alert("Error al añadir el producto")

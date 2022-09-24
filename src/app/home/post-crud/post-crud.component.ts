@@ -6,7 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Post } from 'src/app/interfaces/postInterface.type';
 import { ApiCrudService } from 'src/app/services/api-crud.service';
 import { AddFormComponent } from './forms/add-form/add-form.component';
-import { DeleteFormComponent } from './forms/delete-form/delete-form.component';
 
 @Component({
   selector: 'app-post-crud',
