@@ -1,21 +1,21 @@
-.p{
-    color: white;
+
+.wrapper{
+  margin: 20px;
+}
+.mat-elevation-z8 {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
 }
 
-
-  
-@mixin margin-padding($m-direction, $m-amount, $p-direction, $p-amount) {
-    @if $m-direction == all {
-      margin: $m-amount;
-    } @else {
-      margin-#{$m-direction}: $m-amount;
-    }
-    @if $p-direction == all {
-      padding: $p-amount;
-    } @else {
-      padding-#{$p-direction}: $p-amount;
-    }
-  }
-  .mat-elevation-z8 {
-    @include margin-padding(all, 5% 10px, bottom, 5%);
-  }
+.mat-form-field{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 50px;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(250, 249, 249);
+}
+.th,td{
+   flex: 0 0 100px;
+}
