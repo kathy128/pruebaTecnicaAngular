@@ -1,6 +1,5 @@
 <div mat-dialog-content>
 <h5 mat-dialog-title>Agregar un Post</h5>
-<div mat-dialog-content>
   <form [formGroup]="postForm">
   <mat-form-field appearance="outline">
     <mat-label>USER ID</mat-label>
@@ -14,7 +13,7 @@
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>POST</mat-label>
-    <textarea formControlName="body" matInput placeholder="¡Good News!"></textarea>
+    <input formControlName="body" matInput placeholder="¡Good News!">
     <mat-icon matSuffix>note_add</mat-icon>
   </mat-form-field>
 <div mat-dialog-action [align]="'end'">

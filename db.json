@@ -1,64 +1,22 @@
 {
   "posts": [
     {
-      "userId": 1,
-      "id": 3,
-      "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-      "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
-    },
-    {
-      "userId": "2",
-      "title": "Soy peor, aveces",
-      "body": "Alto sueñoooo",
-      "id": 8
-    },
-    {
-      "userId": "2",
-      "title": "Soy peor",
-      "body": "Alto sueñoooo, demasiadooo",
-      "id": 9
-    },
-    {
-      "userId": "2",
-      "title": "Actualizar Read.me",
-      "body": "Poner npm run serverAPI para correr el servidor json-server para la api",
-      "id": 10
-    },
-    {
-      "userId": "3",
-      "title": "qweqw",
-      "body": "sdasdasd",
-      "id": 11
-    },
-    {
-      "userId": "dasd",
-      "title": "asdas",
-      "body": "asdasd",
+      "userId": "Buda",
+      "title": "Mi dia",
+      "body": "Como flores hermosas, con color, pero sin aroma, son las dulces palabras para el que no obra de acuerdo con ellas.",
       "id": 12
     },
     {
-      "userId": "3",
-      "title": "asdasdas",
-      "body": "asdasdas",
-      "id": 13
-    },
-    {
-      "userId": "4",
+      "userId": "Lao-tsé",
       "title": "askdjkas",
-      "body": "kasdkashdkjas",
+      "body": "Con buenas palabras se puede negociar, pero para engrandecerse se requieren buenas obras.",
       "id": 14
     },
     {
-      "userId": "asd",
+      "userId": "Friedrich Nietzsche ",
       "title": "dfgdfg",
-      "body": "zzxxzzds",
+      "body": "La palabra más soez y la carta más grosera son mejores, son más educadas que el silencio.",
       "id": 15
-    },
-    {
-      "userId": "1",
-      "title": "gh",
-      "body": "sdfs",
-      "id": 16
     }
   ],
   "comments": [],

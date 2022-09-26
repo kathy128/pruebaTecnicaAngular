@@ -1,19 +1,126 @@
-.table { width: 100%; table-layout: fixed; } 
-.wrapper{
-  margin: 20px;
+$basicColor: rgb(228, 228, 228);
+$sizeIcon: 100px;
+.header{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(13, 25, 88);
+  flex-wrap: wrap;
+  align-items: center;
 }
+.titleTable{
+  flex: 1 1 auto;
+  margin-right: 40px;
+  margin-left: 10px;
+  color:$basicColor;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.input{
+  height: 10px;
+  width: 10px;
+  
+}
+.mat-form-field{
+  width: 20%;
+  height: 35px;
+  background-color: rgba(206, 206, 206, 0);
+}
+::ng-deep.mat-form-field-outline {
+  color: $basicColor!important;
+  height: 35px;
+  width: 100%;
+  flex-grow: 4;
+  margin-top: -4px;
+}
+::ng-deep.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $basicColor!important;
+  border-radius: 30%;
+}
+::ng-deep.mat-form-field-label {
+  color: rgba(255, 255, 255, 0.6)!important;
+  transform: translateY(-3px) scale(.75); width: 130.33333%;
+  
+}
+::ng-deep.mat-form-field-infix { 
+  font-size: 13px; 
+  border: 1px !important;  
+}
+.filter{
+  background: url(https://cdn-icons-png.flaticon.com/512/3308/3308543.png) no-repeat 100%;
+  padding-right:25px;
+  background-size: 15px;
+  &::placeholder{
+    color:rgb(191, 191, 212)
+  }
+}
+.scroll-box-wrapper::-webkit-scrollbar{
+  width: 8px;
+  background-color: #e4e4e3;
+}
+.scroll-box-wrapper::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #cacaca;
+}
+.scroll-box-wrapper {
+  overflow: auto;
+  height: 89vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 89);
+  background-image: url('/assets/Dashboard/fondoDashboard@PYP.png');
+  z-index: -1;
+  margin: 60px 20px 0; 
+}
+.wrapper{
+  overflow: auto;
+  position: fixed;
+  margin: 20px;
+  background-color:$basicColor;
+  color:rgb(24, 23, 23);
+  margin-top: 60px;
+}
+
+
 .mat-elevation-z8 {
+  table-layout: fixed; 
   padding-top: 70px;
   width: 100%;
   overflow: auto;
-  background-color: rgb(255, 255, 255);
+  background-color:$basicColor;
+  overflow:hidden !important;
+  
+}
+th.mat-header-cell{
+  color:rgb(23, 51, 209);
+  font-size: medium;
+  text-align: center;
+  justify-content:flex-start;
+}
+td.mat-cell{
+  text-align:center;
+  justify-content: center;
 }
 
-.mat-form-field{
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 50px;
-  width: 100%;
-  height: 70px;
-  background-color: rgb(250, 249, 249);
+
+.iconAdd{
+  color: $basicColor;
+}
+.iconEdit{
+  color: rgb(14, 14, 85);
+}
+.delete{
+  color: rgb(150, 7, 7);
+}
+mat-paginator{
+  background-color: rgb(13, 25, 88);
+  color: $basicColor;
+  &.pageSizeOptions{
+    color: white;
+  }
+}
+mat-paginator-navigation-previous{
+  background-color: $basicColor !important;
+}
+mat-paginator-page-size-label-focused{
+  background-color: $basicColor !important;
 }

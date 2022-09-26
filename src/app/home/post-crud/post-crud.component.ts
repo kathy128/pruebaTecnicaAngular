@@ -6,11 +6,12 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Post } from 'src/app/interfaces/postInterface.type';
 import { ApiCrudService } from 'src/app/services/api-crud.service';
 import { AddFormComponent } from './forms/add-form/add-form.component';
+import { ToastService } from "src/app/services/toast.service";
 
 @Component({
   selector: 'app-post-crud',
   templateUrl: './post-crud.component.html',
-  styleUrls: ['./post-crud.component.scss']
+  styleUrls: ['./post-crud.component.scss'],
 })
 export class PostCrudComponent implements OnInit {
 
@@ -21,17 +22,8 @@ export class PostCrudComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
   constructor(private apicrud: ApiCrudService,
-              public dialog: MatDialog) {
+              public dialog: MatDialog,private toastService: ToastService,) {
   };
-  addPost(){
-    this.dialog.open(AddFormComponent,{
-      width:'30%'
-    }).afterClosed().subscribe(val=>{
-      if (val === 'Guardar'){
-        this.getAllPost();
-      }
-    });
-  }
   ngOnInit(): void { 
     this.getAllPost();
   }
@@ -49,13 +41,21 @@ export class PostCrudComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
+  addPost(){
+    this.dialog.open(AddFormComponent,{
+      width:'30%'
+    }).afterClosed().subscribe(val=>{
+      if (val === 'Añadido'){
+        this.getAllPost();
+      }
+    });
+  }
   editPost(row: any){
     this.dialog.open(AddFormComponent,{
       width: '30%',
       data:row
     }).afterClosed().subscribe(val=>{
-      if (val === 'Actualizar'){
+      if (val === 'updated'){
         this.getAllPost();
       }
     });;
@@ -63,11 +63,11 @@ export class PostCrudComponent implements OnInit {
   deletePost(id:number){
     this.apicrud.deletePost(id).subscribe({
       next:(res) => {
-        alert("Producto eliminado");
+        this.toastService.success("Elemento eliminado con exito");
         this.getAllPost();
       },
       error:()=>{
-        alert("Error al eliminar el elemento")
+        this.toastService.error("Error al eliminar el elemento");
       }
     })
   }
